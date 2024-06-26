@@ -1,0 +1,121 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body #root {
+  display: grid;
+  grid-template-rows: 10% auto 5%;
+  height: 100%;
+}
+header {
+  grid-row: 1;
+}
+main {
+  grid-row: 2;
+  overflow: auto;
+}
+footer {
+  grid-row: 3;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+  padding: 1rem;
+}
+.container {
+  max-width: 960px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.navbar{
+  padding: 0;
+  height: 100%;
+}
+.navbar, footer, .navbar-nav{
+  background-color: #262626;
+} 
+.navbar a.nav-link {
+  color: #8e8e8e;
+  transition: color .15s ease-in-out;
+}
+.navbar a.nav-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.navbar-toggler-icon{
+  color: #8e8e8e;
+}
+.logo{
+  max-width: 40px;
+}
+header a {
+  text-decoration: none;
+}
+.home-div{
+  background-image: url("http://localhost:3000/assets/fondo-home-2.jpg");
+  background-size: cover; 
+  background-position: center;
+  flex: 1;
+  display:flex;
+}
+
+.home-text{
+  color: #d6d6d6;
+  font-weight: 700;
+}
+
+.secondary-text{
+  color: #d6d6d6;
+  font-weight: 500;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.ingredient-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ingredient-list li {
+  margin-bottom: 5px;
+}
+
+.recipe-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.recipe-iframe {
+  margin-bottom: 20px;
+}
+
+.recipe-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.recipe-media {
+  flex: 1;
+}
