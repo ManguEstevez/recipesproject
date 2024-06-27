@@ -7,9 +7,6 @@ from users.views import login_view, signup_view, logout_view
 #Hay que importar las vistas desde recipes.views (recipe_view)
 from recipes.views import RecipeView, add_to_favourites, favourite_recipes
 
-from django.conf.urls.static import static
-from django.conf import settings
-
 urlpatterns = [
     path('get-csrf-token', get_csrf_token, name='get_csrf_token'),
     path('admin', admin.site.urls),
@@ -21,6 +18,3 @@ urlpatterns = [
     path('favourites', favourite_recipes, name='favourite_recipes'),
 
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
