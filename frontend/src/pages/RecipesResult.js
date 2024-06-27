@@ -58,22 +58,42 @@ const RecipesResult = () => {
   }
 
   return (
-    <div className="container mt-4 ml-10">
+    <div className="container mt-4">
       <div className="row justify-content-center">
         {recipes.map((recipe, index) => (
-          <div key={index} className="col-lg-10 mb-3">
-            <div className="card">
-              <div className="card-body recipe-details">
-                <div className="recipe-text">
+          <div key={index} className="col-lg-8 mb-4">
+            <div className="card recipe-card">
+              <div className="card-body">
+                <div className="recipe-header">
                   <h5 className="card-title">{recipe.strMeal}</h5>
                   {isAuth && (
                     <button
                       onClick={() => handleAddToFavourites(recipe.idMeal)}
-                      className="btn btn-secondary float-end"
+                      className="btn btn-secondary"
                     >
                       Add to Favourites
                     </button>
                   )}
+                </div>
+                <div className="recipe-content">
+                <div className="recipe-media mb-3 d-flex flex-wrap">
+                <div className="recipe-img-wrapper">
+                  <img className="recipe-img img-fluid" src={recipe.strMealThumb} alt={recipe.strMeal} />
+                </div>
+                  {recipe.strYoutube && (
+                    <div className="recipe-iframe-wrapper ms-3">
+                      <iframe
+                        className="recipe-iframe"
+                        width="300"
+                        height="200"
+                        src={recipe.strYoutube}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                  </div>
+                  )}
+                  </div>
                   <p className="card-text"><strong>Category:</strong> {recipe.strCategory}</p>
                   <p className="card-text"><strong>Area:</strong> {recipe.strArea}</p>
                   <h3>Instructions</h3>
@@ -86,21 +106,6 @@ const RecipesResult = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-                <div className="recipe-media">
-                  <img className="recipe-img" src={recipe.strMealThumb} alt={recipe.strMeal} />
-                  {recipe.strYoutube && (
-                    <iframe
-                      className="recipe-iframe"
-                      width="100%"
-                      height="315"
-                      src={recipe.strYoutube}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  )}
                 </div>
               </div>
             </div>

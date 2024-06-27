@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Link } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchCsrfToken  } from '../csrf'; 
 import { getCurrentUser } from '../authService';
 
@@ -43,16 +43,15 @@ const Favourites = () => {
     }
   }, [isAuth, csrfToken]);
 
-
   return (
-    <div className="container">
+    <div className="container mt-4">
       <h2 className="my-4 text-center">⭐ Your Favourite Recipes ⭐</h2>
-      <div className="row">
+      <div className="row justify-content-center">
         {favourites.map((recipe) => (
-          <div key={recipe.idMeal} className="col-md-4">
-            <div className="card mb-4">
+          <div key={recipe.idMeal} className="col-md-6 mb-4">
+            <div className="card h-100 favourite-card">
               <img src={recipe.strMealThumb} className="card-img-top" alt={recipe.strMeal} />
-              <div className="card-body">
+              <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{recipe.strMeal}</h5>
                 <p className="card-text"><strong>Category:</strong> {recipe.strCategory}</p>
                 <p className="card-text"><strong>Area:</strong> {recipe.strArea}</p>
